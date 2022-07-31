@@ -8,7 +8,7 @@ Training session from OFW17 - Using OpenFOAM to Design Extrusion Dies for Thermo
 
 
 # Main steps:
-1. Edit the geometry file in FreeCAD and use the export command to create an stl file or each patch, using the shape boundary (Module Part Design)
+1. in the Module "Part Desing" edit the geometry file in FreeCAD and use the export command to create an stl file or each patch (use ast format to export the stl file in ascii, then change the extension to stl), using the shape boundary binder
 2. use the uniquSTL.X script (stl folder) to create the total.fms file (the myList file should contain the list of the individual stl files to join)
 3. copy the total.fms file to the root of the case folder
 4. compile the fobj funtion object (fobj folder) with "wmake libso"
