@@ -1,0 +1,111 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                |
+| \\      /  F ield         | cfMesh: A library for mesh generation          |
+|  \\    /   O peration     |                                                |
+|   \\  /    A nd           | Author: Franjo Juretic                         |
+|    \\/     M anipulation  | E-mail: franjo.juretic@c-fields.com            |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version   2.0;
+    format    ascii;
+    class     dictionary;
+    location  "system";
+    object    meshDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+surfaceFile "total.fms";
+
+maxCellSize 0.25;
+
+//boundaryCellSize 1;
+
+localRefinement
+{
+}
+
+
+renameBoundary
+{
+    //defaultName        ;
+    defaultType        patch;
+
+    newPatchNames
+    {
+        wall
+        {
+            newName     wall;
+            type     wall;
+        }
+        
+        in
+        {
+            newName     in;
+            type     patch;
+        }
+
+        es01
+        {
+            newName     es01;
+            type     patch;
+        }
+
+        es02
+        {
+            newName     es02;
+            type     patch;
+        }
+
+        es03
+        {
+            newName     es03;
+            type     patch;
+        }
+        
+        es04
+        {
+            newName     es04;
+            type     patch;
+        }        
+
+        es05
+        {
+            newName     es05;
+            type     patch;
+        }
+        /* "(es|is).*"
+        {
+            newName     "(es|is).*";
+            type     patch;
+        } */
+
+    }
+}
+
+/* 
+objectRefinements
+{
+box1
+	{
+	type		box;
+	additionalRefinementLevels	5;
+	centre		(0 40 0.0);
+	lengthX 	100;
+	lengthY		41;
+	lengthZ 	100;
+	}
+box2
+	{
+	type		box;
+	additionalRefinementLevels	3;
+	centre		(0 80 0.0);
+	lengthX 	100;
+	lengthY		41;
+	lengthZ 	100;
+	}
+}
+ */
+// ************************************************************************* //
